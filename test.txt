@@ -1,0 +1,2 @@
+[<Resource: Resource object (1)>, <Resource: Resource object (2)>, <Resource: Resource object (3)>]
+<zip object at 0x000002B2945C0B40>
