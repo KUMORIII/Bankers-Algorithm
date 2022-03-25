@@ -1,0 +1,288 @@
+/* === About === */
+#about-page{
+    background-color: #1b1b1b;
+    padding: 100px 0px;
+}
+
+#about-page .about-title{
+    color: #f4f4f4;
+    font-size: 30px;
+    text-transform: uppercase;
+    padding-bottom: 18px;
+}
+
+#about-page h2{
+    color: #808b8d;
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+#about-page p{
+    color: #808b8d;
+    font-size: 14px;
+    margin-bottom: 40px;
+}
+
+.member{
+    margin-top: 25px;
+}
+
+.member .member-img{
+    position: relative;
+    width: 300px;
+    margin: auto;
+}
+
+.member .member-img:before{
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    z-index: 200;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    border-radius: 0px;
+}
+
+.member .member-img:hover:before{
+    opacity: 0.6;
+}
+
+.member .member-img img{
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 0px;
+    width: 100%;
+    height: auto;
+}
+
+.member-social{
+    position: absolute;
+    width: 303px;
+    height: 303px;
+    top: 0;
+    left: 0;
+}
+
+.member-social .facebook-icon i{
+    color: #ffffff;
+    font-size: 20px;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 0px;
+    margin: 1px;
+    position: absolute;
+    top: -0px;
+    left: 114px;
+    z-index: -999;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.member .member-img:hover .facebook-icon i{
+    top: 114px;
+    z-index: 300;
+}
+
+.member-social .twitter-icon i{
+    color: #ffffff;
+    font-size: 20px;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 0px;
+    margin: 1px;
+    position: absolute;
+    top: 114px;
+    right: -0px;
+    z-index: -999;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.member .member-img:hover .twitter-icon i{
+    right: 114px;
+    z-index: 300;
+}
+
+.member-social .linkedin-icon i{
+    color: #ffffff;
+    font-size: 20px;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 0px;
+    margin: 1px;
+    position: absolute;
+    bottom: 114px;
+    left: -0px;
+    z-index: -999;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.member .member-img:hover .linkedin-icon i{
+    left: 114px;
+    z-index: 300;
+}
+
+.member-social .google-plus-icon i{
+    color: #ffffff;
+    font-size: 20px;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 0px;
+    margin: 1px;
+    position: absolute;
+    bottom: -0px;
+    right: 114px;
+    z-index: -999;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.member .member-img:hover .google-plus-icon i{
+    bottom: 114px;
+    z-index: 300;
+}
+
+.member h3{
+    color: #f7f7f7;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.member span{
+    font-size: 18px;
+}
+
+
+
+/* === Contact === */
+#contact-page{
+    background-color: #ffffff;
+    padding: 100px 0px;
+}
+
+.contact-form-area h1.contact-title{
+    color: #000000;
+    font-size: 30px;
+    text-transform: uppercase;
+    padding-bottom: 18px;
+}
+
+.contact-form-area h2{
+    color: #808b8d;
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    letter-spacing: 0.03em;
+}
+
+.contact-form-area p{
+    color: #808b8d;
+    font-size: 14px;
+    margin-bottom: 40px;
+}
+
+.contact-form .form-control{
+    border-radius: 0px;
+    background-color: transparent;
+    margin-top: 28px;
+}
+
+.contact-form textarea{
+    resize: none;
+}
+
+.contact-form .submit-button{
+    border-radius: 0px;
+    padding: 8px 30px;
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 28px;
+    text-transform: uppercase;
+}
+
+
+/* === Footer === */
+.footer {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    color: rgba(255, 255, 255, 0.4);
+    background-color: #262626;
+}
+
+
+
+
+/* === Responsive === */
+
+/* Small devices (mobiles, 320px and up) */
+@media (min-width: 320px) and (max-width: 479px){
+.subscribe-area .form-control {
+    padding: 18px 12px 20px 14px;
+    width: 270px;
+    border-radius: 0px 0px 0px 0px;
+    margin-right: 0px;
+}
+.submit-bt {
+    padding: 7px 20px 8px;
+    border-radius: 0px 0px 0px 0px;
+    width: 270px;
+    margin-top: 0px;
+    margin-left: 3px;
+    
+}
+.member .member-img {
+    width: 270px;
+}
+.member-social {
+    width: 270px;
+    height: 270px;
+}
+.member .member-img:hover .facebook-icon i {
+    top: 98px;
+}
+.member-social .facebook-icon i {
+    left: 98px;
+}
+.member .member-img:hover .twitter-icon i {
+    right: 98px;
+}
+.member-social .twitter-icon i {
+    top: 98px;
+}
+.member .member-img:hover .linkedin-icon i {
+    left: 98px;
+}
+.member-social .linkedin-icon i {
+    bottom: 98px;
+}
+.member .member-img:hover .google-plus-icon i {
+    bottom: 98px;
+}
+.member-social .google-plus-icon i {
+    right: 98px;
+}
+
+}
