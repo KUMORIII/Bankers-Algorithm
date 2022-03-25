@@ -1,0 +1,179 @@
+/* =============================================================================
+   HTML5 CSS Reset Minified - Eric Meyer
+   ========================================================================== */
+
+
+body{line-height:1}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+nav ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:none}
+a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent;text-decoration:none}
+mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}
+del{text-decoration:line-through}
+abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
+table{border-collapse:collapse;border-spacing:0}
+hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
+input,select{vertical-align:middle}
+li{list-style:none}
+
+
+/* =============================================================================
+   My CSS
+   ========================================================================== */
+
+/* ---- base ---- */
+
+html,body{ 
+	width:100%;
+	height:100%;
+	background:#111;
+}
+
+html{
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+canvas{
+  display:block;
+  vertical-align:bottom;
+}
+
+
+/* ---- stats.js ---- */
+
+.count-particles{
+  background: #000022;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: 80px;
+  color: #13E8E9;
+  font-size: .8em;
+  text-align: left;
+  text-indent: 4px;
+  line-height: 14px;
+  padding-bottom: 2px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+
+.js-count-particles{
+  font-size: 1.1em;
+}
+
+#stats,
+.count-particles{
+  -webkit-user-select: none;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+#stats{
+  border-radius: 3px 3px 0 0;
+  overflow: hidden;
+}
+
+.count-particles{
+  border-radius: 0 0 3px 3px;
+}
+
+
+/* ---- particles.js container ---- */
+
+#particles-js{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/15.jpg");
+  background: url("../images/13.jpg"), url("../images/12.jpg"), url("../images/10.jpg"), url("../images/17.jpg"), url("../images/15.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation:frams 50s infinite;
+  -moz-animation: frams 50s infinite; /* Firefox */
+	-webkit-animation: frams 50s infinite; /* Safari and Chrome */
+	-o-animation: frams 50s infinite; 
+}
+@keyframes frams {
+  0%{
+      background-image: url("../images/15.jpg");background-size: 100% 100%;background-repeat: no-repeat
+  }
+  13%{
+      background-image: url("../images/13.jpg");background-size: 100% 100%;background-repeat: no-repeat
+  }
+  38%{
+      background-image: url("../images/12.jpg");background-size: 100% 100%;background-repeat: no-repeat
+  }
+  63%{
+      background-image: url("../images/10.jpg");background-size: 100% 100%;background-repeat: no-repeat
+  }
+  88%{
+      background-image: url("../images/17.jpg");background-size: 100% 100%;background-repeat: no-repeat
+  }
+  100%{
+      background-image: url("../images/15.jpg");background-size: 100% 100%;background-repeat: no-repeat
+  }
+}
+
+@-webkit-keyframes frams {
+  0%{
+      background-image: url("../images/15.jpg");background-size: 100% 100%;background-repeat: no-repeat
+  }
+  13%{
+      background-image: url("../images/13.jpg");background-size: 100% 100%;background-repeat: no-repeat
+  }
+  38%{
+      background-image: url("../images/12.jpg");background-size: 100% 100%;background-repeat: no-repeat
+  }
+  63%{
+      background-image: url("../images/10.jpg");background-size: 100% 100%;background-repeat: no-repeat
+  }
+  88%{
+      background-image: url("../images/17.jpg");background-size: 100% 100%;background-repeat: no-repeat
+  }
+  100%{
+      background-image: url("../images/15.jpg");background-size: 100% 100%;background-repeat: no-repeat
+  }
+}
+
+@-moz-keyframes frams {
+  0%{
+      background-image: url("../images/15.jpg");background-size: 100% 100%;background-repeat: no-repeat
+  }
+  13%{
+      background-image: url("../images/13.jpg");background-size: 100% 100%;background-repeat: no-repeat
+  }
+  38%{
+      background-image: url("../images/12.jpg");background-size: 100% 100%;background-repeat: no-repeat
+  }
+  63%{
+      background-image: url("../images/10.jpg");background-size: 100% 100%;background-repeat: no-repeat
+  }
+  88%{
+      background-image: url("../images/17.jpg");background-size: 100% 100%;background-repeat: no-repeat
+  }
+  100%{
+      background-image: url("../images/15.jpg");background-size: 100% 100%;background-repeat: no-repeat
+  }
+}
+
+@-o-keyframes frams {
+  0%{
+      background-image: url("../images/15.jpg");background-size: 100% 100%;background-repeat: no-repeat
+  }
+  13%{
+      background-image: url("../images/13.jpg");background-size: 100% 100%;background-repeat: no-repeat
+  }
+  38%{
+      background-image: url("../images/12.jpg");background-size: 100% 100%;background-repeat: no-repeat
+  }
+  63%{
+      background-image: url("../images/10.jpg");background-size: 100% 100%;background-repeat: no-repeat
+  }
+  88%{
+      background-image: url("../images/17.jpg");background-size: 100% 100%;background-repeat: no-repeat
+  }
+  100%{
+      background-image: url("../images/15.jpg");background-size: 100% 100%;background-repeat: no-repeat
+  }
+}
