@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../static/favicon.ico">
+
+    <title>Banker's Algorithm</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="https://fastly.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.33/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="../../static/mainpage.css">
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../">Banker's Algorithm</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="../init/">Random</a></li>
+                <li><a href="../../admin/">Admin</a></li>
+                <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section id="home-page">
+        <div class="container-fluid home-bg">
+        <div class="starter-template">
+        
+            <table class="table table-bordered" id="resource-table">
+                <tr>
+                    <th style="text-align:center;">资源名</th>
+                    <th style="text-align:center;">Total Num</th>
+                    <th style="text-align:center;">Available</th>
+                </tr>
+                <tbody id="res_tb">
+                    {% if res_list %}
+                        {% for res in res_list %}
+                            <tr>
+                                <td>{{res.res_name}}</td>
+                                <td>{{res.total_num}}</td>
+                                <td>{{res.available_num}}</td>
+                            </tr>
+                        {% endfor %}
+                    {% endif %}
+                </tbody>
+            </table>
+            <div class="tk-countdown">
+                <div class="hours">
+                    <span id="blank"></span>
+                    <span id="h1"></span>
+                    <span id="h2"></span>
+                    <span id="h3"></span>
+                    <span id="h4"></span>
+                    <span id="h5"></span>
+                    <span id="h6"></span>
+                    <span id="h7"></span>
+                    <span id="h8"></span>
+                    <span id="h9"></span>
+                    <span id="subtitle">hours</span>
+                </div>
+                <div class="minutes">
+                    <span id="blank"></span>
+                    <span id="m1"></span>
+                    <span id="m2"></span>
+                    <span id="m3"></span>
+                    <span id="m4"></span>
+                    <span id="m5"></span>
+                    <span id="m6"></span>
+                    <span id="m7"></span>
+                    <span id="m8"></span>
+                    <span id="m9"></span>
+                    <span id="subtitle">minutes</span>
+                </div>
+                <div class="seconds">
+                    <span id="blank"></span>
+                    <span id="s1"></span>
+                    <span id="s2"></span>
+                    <span id="s3"></span>
+                    <span id="s4"></span>
+                    <span id="s5"></span>
+                    <span id="s6"></span>
+                    <span id="s7"></span>
+                    <span id="s8"></span>
+                    <span id="s9"></span>
+                    <span id="subtitle">seconds</span>
+                </div>
+            </div>
+        <br />
+        <!--<p id="demo"></p>-->
+        <a name="Security-submit" class="btn btn-primary btn-lg submit-bt" href="../mainpage/calculate/" >SecurityCheck</a>
+        <table class="table table-bordered" id="main-table">
+            <tr>
+                <th rowspan="2" style="text-align:center; vertical-align: middle;">进程名</th>
+                <th colspan="3" style="text-align:center;">Max</th>
+                <th colspan="6" style="text-align:center;">Allocation</th>
+                <th colspan="3" style="text-align:center;">Need</th>
+            </tr>
+            <tr>
+                <th style="text-align:center;">R1</th>
+                <th style="text-align:center;">R2</th>
+                <th style="text-align:center;">R3</th>
+                <th colspan="2" style="text-align:center;">R1</th>
+                <th colspan="2" style="text-align:center;"> R2</th>
+                <th colspan="2" style="text-align:center;">R3</th>
+                <th style="text-align:center;">R1</th>
+                <th style="text-align:center;">R2</th>
+                <th style="text-align:center;">R3</th>
+            </tr>
+            {% for u, max, allo, need  in matrix %}
+                <tr>
+                    <td>{{u.pro_name}}</td>
+                        {% for maxx in max %}
+                            <td>{{maxx}}</td>
+                        {% endfor %}
+                        {% for alloo in allo %}
+                            <td>{{alloo.allo_num}}</td>
+                            <td>
+                                <a href="javascript:void(0)" style="color:rgb(255, 255, 255);text-decoration:none;" onclick="countdown({{alloo.hour}}, {{alloo.minute}}, {{alloo.second}}, {{alloo.allo_id}}, {{alloo.idx}})" id="{{alloo.allo_id}}"><span class="glyphicon glyphicon-time" aria-hidden="true"></span></a>
+                            </td>
+                        {% endfor %}
+                        {% for needd in need %}
+                            <td>{{needd}}</td>
+                        {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+        <div class="mastfoot">
+            <div class="inner">
+            <p>Welcome to my <a href="https://www.cnblogs.com/kumori/">Blog, by <a href="https://github.com/KUMORIII">@kumori</a>.</p>
+            </div>
+        </div>
+        </div>
+
+        </div><!-- /.container -->
+    </section>
+    </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="https://fastly.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.33/assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../static/js/bootstrap.min.js"></script>
+    <script src="../../static/js/starlight.js"></script> 
+    <script type="text/javascript">
+      // Update the count down every 1 second
+      function countdown(hours, minutes, seconds, id, idx) {
+          id = id.toString()
+          idx = idx.toString()
+          var setTime = (hours*3600 + minutes*60 + seconds) * 1000;
+          var countDownDate = new Date().getTime();
+          countDownDate += setTime;
+          var timeH=document.getElementById('h'+idx);
+          var timeM=document.getElementById('m'+idx);
+          var timeS=document.getElementById('s'+idx);
+          var oDiv=document.getElementById(id); 
+          var x = setInterval(function (){
+      
+              // Get today's date and time
+              var now = new Date().getTime();
+                  
+              // Find the distance between now and the count down date
+              var distance = countDownDate - now;
+                  
+              // Time calculations for days, hours, minutes and seconds
+              var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+              var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+              var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+              // 鼠标划过事件
+              oDiv.onmouseover = function (){
+                  // 3.事件处理程序
+                  /*timeH.style.color = "#ffffff";
+                  timeM.style.color = "#ffffff";
+                  timeS.style.color = "#ffffff";*/
+                  timeH.style.display= "block";
+                  timeM.style.display= "block";
+                  timeS.style.display= "block";
+              }
+
+              // 鼠标移开事件
+              oDiv.onmouseout = function (){
+                  // 3.事件处理程序
+                  /*timeH.style.color = "#3d3d3d";
+                  timeM.style.color = "#3d3d3d";
+                  timeS.style.color = "#3d3d3d";*/
+                  timeH.style.display= "none";
+                  timeM.style.display= "none";
+                  timeS.style.display= "none";
+              }
+              // Output the result in an element with id="demo"
+              //timeP.innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
+              if (hours < 0){
+                  hours = 0
+              }
+              if (minutes < 0){
+                minutes = 0
+            }
+            if (seconds < 0){
+                seconds = 0
+            }
+              if (hours < 10){
+                  timeH.innerHTML = "0" + hours;
+              }
+              else {
+                  timeH.innerHTML = hours;
+              }
+              if (minutes < 10){
+                timeM.innerHTML = "0" + minutes;
+              }
+              else {
+                timeM.innerHTML = minutes;
+              }
+              if (seconds < 10){
+                timeS.innerHTML = "0" + seconds;
+              }
+              else {
+                timeS.innerHTML = seconds;
+              }       
+              // If the count down is over, write some text 
+              if (distance <= 0) {
+                  clearInterval(x);
+                  timeH.innerHTML = "0" + hours;
+                  timeM.innerHTML = "0" + minutes;
+                  timeS.innerHTML = "0" + seconds;
+                  location.reload();
+              }
+              }, 1000);
+        }
+      </script>
+  </body>
+</html>
